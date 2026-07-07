@@ -11,4 +11,5 @@ Untuk menjalankan salah satu varian aplikasi Bank Account, ikuti langkah-langkah
 
 1. **Konfigurasi Database**: Pastikan Anda sudah menambahkan/menyesuaikan kredensial database PostgreSQL Anda pada file konfigurasi aplikasi.
 2. **Jalankan Script**: Eksekusi file `run.bat` untuk menjalankan aplikasi.
-3. **Uji Coba**: Setelah aplikasi berhasil berjalan, Anda dapat mencoba memanggil API `transfer` untuk melakukan pengetesan.
+3. **Buat Akun**: Sebelum melakukan transfer, Anda perlu membuat akun melalui API berikut: `http://localhost:7776/call/dailylimit/save`
+4. **Uji Coba Transfer**: Setelah akun berhasil dibuat, lakukan pengetesan transfer antar akun dengan memanggil API: `http://localhost:7776/call/transfer`
