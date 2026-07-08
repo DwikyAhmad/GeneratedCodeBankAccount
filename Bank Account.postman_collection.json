@@ -1,0 +1,69 @@
+{
+  "info": {
+    "_postman_id": "6373bc38-c0a3-48ec-aaae-2ae8e7d19fa3",
+    "name": "Bank Account",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28364574"
+  },
+  "item": [
+    {
+      "name": "Transfer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id_account\": \"4bea96ce-075d-4002-aaa7-398eaee6cadf\",\r\n    \"targetId\":   \"c8623719-a59a-4019-a001-99dd769ac642\",\r\n    \"amountstr\":  \"900\",\r\n    \"currency\":   \"IDR\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7776/call/transfer",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7776",
+          "path": [
+            "call",
+            "transfer"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create new account",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"200\",\r\n    \"withdraw\": \"0\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:7776/call/dailylimit/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "7776",
+          "path": [
+            "call",
+            "dailylimit",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
