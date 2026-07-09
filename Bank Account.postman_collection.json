@@ -157,6 +157,326 @@
       ]
     },
     {
+      "name": "Case Amount > Daily Limit by Amount",
+      "item": [
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"200\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"400\",\r\n    \"currency\":   \"IDR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "transfer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Case freq withdraw => daily limit",
+      "item": [
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"200\",\r\n    \"withdraw\": \"200\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"0\",\r\n    \"currency\":   \"IDR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "transfer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Case Tanpa Daily Limit",
+      "item": [
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"0\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"400\",\r\n    \"currency\":   \"IDR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "transfer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Case Balance Kurang (Loan)",
+      "item": [
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"0\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"900\",\r\n    \"currency\":   \"IDR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "transfer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Loan walaupun kena daily limit",
+      "item": [
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"0\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Transfer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"900\",\r\n    \"currency\":   \"IDR\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/transfer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "transfer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "Transfer",
       "request": {
         "method": "POST",
