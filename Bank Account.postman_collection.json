@@ -7,13 +7,163 @@
   },
   "item": [
     {
+      "name": "CRUD",
+      "item": [
+        {
+          "name": "Update Account",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"idaccount\",\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"0\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "update"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Account",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/delete",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Account",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/list",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "list"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Detail Account",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/detail?id_account=e4c31327-7c78-495a-a926-cdb425a3011b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "detail"
+              ],
+              "query": [
+                {
+                  "key": "id_account",
+                  "value": "e4c31327-7c78-495a-a926-cdb425a3011b"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"200\",\r\n    \"withdraw\": \"0\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:7776/call/dailylimit/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "7776",
+              "path": [
+                "call",
+                "dailylimit",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "Transfer",
       "request": {
         "method": "POST",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"id_account\": \"4bea96ce-075d-4002-aaa7-398eaee6cadf\",\r\n    \"targetId\":   \"c8623719-a59a-4019-a001-99dd769ac642\",\r\n    \"amountstr\":  \"900\",\r\n    \"currency\":   \"IDR\"\r\n}",
+          "raw": "{\r\n    \"id_account\": \"e4c31327-7c78-495a-a926-cdb425a3011b\",\r\n    \"targetId\":   \"26c23a53-5e72-4c30-b557-feabcc257f2c\",\r\n    \"amountstr\":  \"400\",\r\n    \"currency\":   \"IDR\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -30,36 +180,6 @@
           "path": [
             "call",
             "transfer"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Create new account",
-      "request": {
-        "method": "POST",
-        "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"balance\": \"450\",\r\n    \"dailyLimit\": \"200\",\r\n    \"withdraw\": \"0\"\r\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
-        "url": {
-          "raw": "http://localhost:7776/call/dailylimit/save",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "7776",
-          "path": [
-            "call",
-            "dailylimit",
-            "save"
           ]
         }
       },
